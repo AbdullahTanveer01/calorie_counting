@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Make it compatible with mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calories Prediction</title>
+</head>
+
+<body style="background: #000;">
+    <div class="login">
+        <h1 style="color: Violet;">Calories Prediction</h1>
+
+        <!-- Action is where the data is sent. In our case, predict page.
+            If action is omitted, it is assumed to be the current page -->
+        <form action="{{ url_for('predict') }}" method="post">
+            <input type="text" name="Age" placeholder="Age" required="required" /><br>
+            <input type="text" name="Height" placeholder="Height" required="required" /><br>
+            <input type="text" name="Weight" placeholder="Weight" required="required" /><br>
+            <input type="text" name="Duration" placeholder="Exercise Duration" required="required" /><br>
+            <input type="text" name="Heart_Rate" placeholder="Heart Rate" required="required" /><br>
+            <input type="text" name="Body_Temp" placeholder="Body Temperature" required="required" /><br>
+            <input type="text" name="Gender" placeholder="Gender (0 for male, 1 for female)" required="required" /><br>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict Calories</button>
+        </form>
+
+        <br>
+        <br>
+        <h4 style="color: Violet;">
+            {{ prediction_text }}
+        </h4>
+    </div>
+</body>
+
+</html>
